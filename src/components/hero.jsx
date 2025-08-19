@@ -1,8 +1,15 @@
 const hero = () => {
     return (
         <div id="hero">
-            <h1 id="myname">Leif Fieger</h1>
-            <p>Explore my projects and skills</p>
+            <div className="hero-title">
+                <h1>Leif Fieger</h1>
+                <p>Apprentice | Sunrise GmbH</p>
+            </div>
+            <div className="hero-text">
+                Hi, I’m Leif 
+
+                I’m an apprentice software developing at Sunrise.
+            </div>
         </div>
     )
 };
