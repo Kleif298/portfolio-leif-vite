@@ -12,7 +12,7 @@ html, body {
   width: 100%;
   margin: 0 0;
   padding: 0;
-  text-align: center;
+  align-content: center;
 }
 
 /*Header related*/
@@ -119,7 +119,25 @@ header .header-content nav a {
   background-color: #333333;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   color: white;
+  position: relative;
+}
+
+#about .title {
+  position: absolute;
+  top: 15px;
+  right: 90px;
+}
+
+#about .text-box {
+  width: 650px;
+  height: 250px;
+  position: absolute;
+  top: 140px;
+  right: 90px;
+}
+
+#about .image-box p {
+  border-radius: 50%;
+  overflow:hidden
 }
