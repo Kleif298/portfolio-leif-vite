@@ -15,49 +15,78 @@ html, body {
   align-content: center;
 }
 
-/*Header related*/
+/*Pages*/
+/*home page*/
+
+
+
+/*Components*/
+
+/*Header and Footer related*/
+
+header, footer {
+  max-width: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
 
 header {
+  height: 80px;
   position: sticky;
   top: 0;
   left: 0;
-  max-width: 100%;
-  width: 100vw;
-  height: 80px;
-  display: flex;
-  flex-direction: column;
-  background-color: #da291c;
-  box-shadow: 0 12px 12px #da291c50;
+  z-index: 1000;
+  box-shadow: 0 10px 20px #9f261d83;
 }
 
-header .header-top-bar {
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #da291c;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0 -10px 20px #9f261d83;
+}
+
+
+.edge-mini-bar {
   width: 100%;
   height: 10px;
   background-color: #9F261D;
 }
 
-header .header-content {
+header .edge-content, footer .edge-content {
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: space-between;
-
+  background-color: #da291c;
 }
 
-header .header-content img{
+footer p{
+  margin: 0;
+  padding: 0 20px;
+  color: white;
+}
+
+header .edge-content img{
   height: 40px;
   width: auto;
   margin: 0 80px;
 }
 
-header .header-content nav {
+header .edge-content nav {
   display: flex;
   flex: 1;
   max-width: 600px;
   justify-content: space-around;
 }
 
-header .header-content nav a {
+header .edge-content nav a {
   color: white;
   padding: 10px;
   text-decoration: none;
@@ -72,7 +101,6 @@ header .header-content nav a {
   flex-direction: row;
   height: 400px;
   background-color: #f0f0f0;
-  box-shadow: inset 0 -24px 16px -16px rgba(0,0,0,0.25);
 }
 
 #hero .hero-title {
@@ -88,8 +116,8 @@ header .header-content nav a {
 #hero .hero-title h1 {
   top: 100px;
   left: 20px;
-  font-size: 2.5rem;
-  margin: 0;
+  font-size: 4rem;
+  margin: 15px 0;
   color: #da291c;
 }
 
@@ -98,17 +126,23 @@ header .header-content nav a {
   left: 20px;
   margin: 0;
   color: #333333;
+  font-size: 1.2rem;
 }
 
-#hero .hero-text {
+#hero .text-box {
   height: 280px;
-  width: 180px;
-  border: 2px solid #8d8363;
-  border-radius: 5px;
-  background-color: #FFEFB9;
-  margin: auto 50px;
+  width: 220px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.25);
+  margin: auto 80px;
   color: #333333;
   font-size: 1.2rem;
+}
+
+.text-box p {
+  padding: 15px;
+  margin: 0;
 }
 
 /*About related*/
@@ -121,6 +155,8 @@ header .header-content nav a {
   flex-direction: column;
   color: white;
   position: relative;
+  box-shadow: 0 -16px 24px rgb(51, 51, 51, 50%),
+              0 16px 24px rgb(51, 51, 51, 50%);
 }
 
 #about .title {
@@ -140,4 +176,49 @@ header .header-content nav a {
 #about .image-box p {
   border-radius: 50%;
   overflow:hidden
+}
+
+/*mywork related*/
+#mywork .background {
+  width: 100%;
+  height: 800px;
+  background-color: #9A998E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mywork .main-container {
+  width: 800px;
+  height: 600px;
+  margin: 40px auto;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+}
+
+#mywork h2 {
+  padding: 20px 50px;
+  color: #333333;
+}
+
+#mywork .project-preview-container {
+  background-color: blueviolet;
+  margin: 20px;
+  height: 400px;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid #cccccc;
+
+}
+
+#mywork .project-preview{
+  background-color: yellow;
+  height: 170px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid #cccccc;
 }

@@ -1,14 +1,15 @@
 const Footer = () => {
     return (
         <footer>
-            <div className="container mx-auto text-center">
+            <div className="edge-content">
                 <p>
-                &copy; {new Date().getFullYear()} My Website. All rights reserved.
+                &copy; {new Date().getFullYear()} Leif Fieger. All rights reserved.
                 </p>
                 <p>
-                Built with ❤️ using React and Tailwind CSS.
+                Built with ❤️ using React and Vite.
                 </p>
             </div>
+            <div className="edge-mini-bar"></div>
         </footer>
     );
 }

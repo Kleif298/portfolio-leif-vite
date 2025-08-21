@@ -1,8 +1,8 @@
 const Header = () => {
     return (
     <header>
-        <div className="header-top-bar"></div>
-        <div className="header-content">
+        <div className="edge-mini-bar"></div>
+        <div className="edge-content">
             <img src="/src/assets/sunrise-logo-grey.png" alt="sunrise-logo-grey"></img>
             <nav>
                 <a href="#about">About</a>

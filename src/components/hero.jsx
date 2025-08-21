@@ -5,10 +5,8 @@ const hero = () => {
                 <h1>Leif Fieger</h1>
                 <p>Apprentice | Sunrise GmbH</p>
             </div>
-            <div className="hero-text">
-                Hi, I’m Leif 
-
-                I’m an apprentice software developing at Sunrise.
+            <div className="text-box">
+                <p>Hi, I’m Leif <br /> <br /> I’m an apprentice software developing at Sunrise.</p>
             </div>
         </div>
     )
