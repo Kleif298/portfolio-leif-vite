@@ -11,7 +11,7 @@ const GitHubProjects = ({ username }) => {
   }, [username]);
 
   return (
-    <div className="github-projects">
+    <div className="sub-container">
       {repos.map(repo => (
         <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer">
           <div className="project-card">

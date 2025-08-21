@@ -1,10 +1,11 @@
 /*General*/
 
-html, body {
+html {
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -22,6 +23,9 @@ html, body {
 
 /*Components*/
 
+#about, #mywork, #contact {
+  scroll-margin-top: 80px;
+}
 /*Header and Footer related*/
 
 header, footer {
@@ -44,7 +48,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 120px;
   background-color: #da291c;
   display: flex;
   flex-direction: column;
@@ -52,11 +56,24 @@ footer {
   box-shadow: 0 -10px 20px #9f261d83;
 }
 
-
 .edge-mini-bar {
   width: 100%;
   height: 10px;
   background-color: #9F261D;
+}
+
+footer .edge-mini-bar{
+  width: 100%;
+  height: 40px;
+  background-color: #9F261D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .social-links{
+  margin-left: 20px;
+
 }
 
 header .edge-content, footer .edge-content {
@@ -66,6 +83,11 @@ header .edge-content, footer .edge-content {
   justify-content: space-between;
   background-color: #da291c;
 }
+
+footer .edge-content{
+  justify-content: center;
+}
+
 
 footer p{
   margin: 0;
@@ -84,6 +106,7 @@ header .edge-content nav {
   flex: 1;
   max-width: 600px;
   justify-content: space-around;
+  margin-right: 30px;
 }
 
 header .edge-content nav a {
@@ -135,13 +158,14 @@ header .edge-content nav a {
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.25);
-  margin: auto 80px;
+  margin: auto 120px;
   color: #333333;
   font-size: 1.2rem;
 }
 
-.text-box p {
+#hero .text-box p {
   padding: 15px;
+
   margin: 0;
 }
 
@@ -161,24 +185,56 @@ header .edge-content nav a {
 
 #about .title {
   position: absolute;
-  top: 15px;
-  right: 90px;
+  top: 40px;
+  right: 150px;
 }
 
 #about .text-box {
-  width: 650px;
+  width: 620px;
   height: 250px;
   position: absolute;
   top: 140px;
-  right: 90px;
+  right: 120px;
 }
 
-#about .image-box p {
+#about .image-box{
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
-  overflow:hidden
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+
+#about .image-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-links{
+  display: flex;
+  flex-flow: row nowrap;
+  height: auto;
+  width: auto;
+  gap: 20px;
+}
+
+#about .social-links{
+  position: absolute;
+  bottom: 20px;
+  right: 150px;
 }
 
 /*mywork related*/
+#mywork {
+  display: flex;
+  flex-direction: row;
+}
+
 #mywork .background {
   width: 100%;
   height: 800px;
@@ -194,41 +250,41 @@ header .edge-content nav a {
   margin: 40px auto;
   border-radius: 20px;
   background-color: #f9f9f9;
+  box-shadow: inline 0 0 10px 20px rgba(134, 134, 134, 0.425);
 }
 
 #mywork h2 {
-  padding: 20px 50px;
+  padding: 20px 0 0 50px;
+  margin-bottom: 0;
   color: #333333;
 }
 
-#mywork .project-preview-container {
-  background-color: blueviolet;
-  margin: 20px;
-  height: 400px;
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border: 1px solid #cccccc;
 
+/*Projects display (by GitHub API)*/
+.sub-container{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 40px;
+  gap: 15px;
 }
 
-/*Prject Card*/
 .project-card{
   background-color: #c98e8959;
   height: 170px;
   width: 200px;
   display: flex;
   flex-direction: column;
-  margin: 20px;
   border: 2px solid rgb(207, 174, 174);
   border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(207, 174, 174, 0.452);
 }
 
 .project-card .title {
   font-size: 1.5rem;
   color: #333333;
   margin: 5px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .project-card .description {
@@ -236,10 +292,29 @@ header .edge-content nav a {
   font-size: 1rem;
   color: #666666;
   margin: 10px;
+  overflow: hidden;
+  display: block;
+  word-wrap: break-word;
 }
 
+.tech-stack .sub-container{
+  gap: 8px;
+}
+
+.tech-item{
+  background-color:  #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+
 hr {
-  margin: 10px 0;
+  margin: 0;
   border: none;
   border-top: 1px solid rgb(207, 174, 174);
 }
+
+/*tech-stack*/
