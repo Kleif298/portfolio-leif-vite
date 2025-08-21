@@ -1,4 +1,3 @@
-import ProjectsPreview from "./ProjectPreview";
 import GitHubProjects from "./GitHubProjects";
 
 const Mywork = () => {

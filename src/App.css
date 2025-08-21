@@ -213,31 +213,22 @@ header .edge-content nav a {
 
 }
 
-#mywork .project-preview{
-  background-color: yellow;
-  height: 170px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  border: 1px solid #cccccc;
-}
-
 /*Prject Card*/
 .project-card{
-  background-color: yellow;
+  background-color: #c98e8959;
   height: 170px;
   width: 200px;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  border: 1px solid #cccccc;
+  border: 2px solid rgb(207, 174, 174);
+  border-radius: 10px;
 }
 
 .project-card .title {
   font-size: 1.5rem;
   color: #333333;
-  margin: 0 10px;
+  margin: 5px 10px;
 }
 
 .project-card .description {
@@ -250,5 +241,5 @@ header .edge-content nav a {
 hr {
   margin: 10px 0;
   border: none;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid rgb(207, 174, 174);
 }
