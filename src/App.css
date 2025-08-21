@@ -222,3 +222,33 @@ header .edge-content nav a {
   margin: 20px;
   border: 1px solid #cccccc;
 }
+
+/*Prject Card*/
+.project-card{
+  background-color: yellow;
+  height: 170px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid #cccccc;
+}
+
+.project-card .title {
+  font-size: 1.5rem;
+  color: #333333;
+  margin: 0 10px;
+}
+
+.project-card .description {
+  font-style: italic;
+  font-size: 1rem;
+  color: #666666;
+  margin: 10px;
+}
+
+hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #cccccc;
+}
