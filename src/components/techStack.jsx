@@ -5,7 +5,7 @@ import { SiVite, SiRaspberrypi } from "react-icons/si";
 
 const techStack = [
   { name: "Java", icon: <DiJava size={32} color="#f89820" /> },
-  { name: "C#", icon: <DiTerminal size={32} color="#239120" /> },      // Platzhalter
+  { name: "C#", icon: <DiTerminal size={32} color="#9967e4ff" /> },      // Platzhalter
   { name: "JavaScript", icon: <DiJavascript1 size={32} color="#f0db4f" /> },
   { name: "HTML", icon: <DiHtml5 size={32} color="#e34c26" /> },
   { name: "CSS", icon: <DiCss3 size={32} color="#264de4" /> },
