@@ -17,9 +17,18 @@ html {
 }
 
 /*Pages*/
-/*home page*/
+/*Keine Pages, single Page*/
 
+/*Elements, General Classes*/
 
+.background {
+  width: 100vw;
+  height: 800px;
+  background-color: #9A998E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /*Components*/
 
@@ -233,15 +242,8 @@ header .edge-content nav a {
 #mywork {
   display: flex;
   flex-direction: row;
-}
-
-#mywork .background {
-  width: 100%;
-  height: 800px;
-  background-color: #9A998E;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 #mywork .main-container {
