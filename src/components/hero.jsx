@@ -1,26 +1,27 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
-    const [scrollY, setScrollY] = useState(0);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollY(window.pageYOffset);
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
         };
-        
-        handleScroll(); // Check initial scroll position
+
         window.addEventListener('scroll', handleScroll);
-        
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    const isExpanded = scrollY === 0;
-
     return (
-        <div id="hero" className={`section-background ${isExpanded ? 'expanded' : ''}`}>
+        <div id="hero" className="section-background">
             <div className="section-container">
                 <motion.div 
                     className="hero-title"
