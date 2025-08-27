@@ -9,20 +9,28 @@
   --transition-speed: 0.3s;
 }
 
-html {
-  height: 100vh;
-  width: 100vw;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 #root {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding-top: 90px; /* Same as header height */
   align-content: center;
+  position: relative;
 }
 
 @keyframes fadeIn {
@@ -52,13 +60,48 @@ html {
 
 /*Elements, General Classes*/
 
-.background {
-  width: 100vw;
-  height: 800px;
-  background-color: #9A998E;
+/* Section layout */
+.section-background {
+  width: 100%;
+  min-height: 400px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  background-color: var(--background-light);
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Specific section backgrounds */
+#hero.section-background {
+  background-color: var(--background-light);
+}
+
+#about.section-background {
+  background-color: var(--secondary-color);
+}
+
+#mywork.section-background {
+  background-color: #9A998E;
+  min-height: 800px;
+}
+
+#mywork .content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+@media (max-width: 1024px) {
+  #mywork .content-wrapper {
+    flex-direction: column;
+  }
 }
 
 /*Components*/
@@ -69,17 +112,17 @@ html {
 /*Header and Footer related*/
 
 header, footer {
-  max-width: 100%;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 header {
   height: 90px;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
   box-shadow: 0 10px 20px #9f261d83;
 }
@@ -139,6 +182,7 @@ header .edge-content img{
   height: 40px;
   width: auto;
   margin: 0 80px;
+  filter: brightness(0) invert(1); /* This makes the SVG white */
 }
 
 header .edge-content nav {
@@ -180,12 +224,11 @@ header .edge-content nav a:hover {
 
 /*Hero related*/
 
-#hero {
-  width: 100%;
+#hero .section-container {
   display: flex;
   flex-direction: row;
   height: 400px;
-  background-color: #f0f0f0;
+  align-items: center;
 }
 
 #hero .hero-title {
@@ -334,19 +377,47 @@ header .edge-content nav a:hover {
 
 /*mywork related*/
 #mywork {
+  min-height: 200px;
+  height: 200px;
+  width: 100%;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+#mywork .background {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
   display: flex;
   flex-direction: row;
-  width: 1200px;
-  margin: 0 auto;
+  gap: 20px;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 #mywork .main-container {
-  width: 800px;
-  height: 600px;
-  margin: 40px auto;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  height: auto;
+  min-height: 200px;
+  margin: 20px 0;
   border-radius: 20px;
   background-color: #f9f9f9;
-  box-shadow: inline 0 0 10px 20px rgba(134, 134, 134, 0.425);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  #mywork .background {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #mywork .main-container {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 #mywork h2 {
@@ -423,6 +494,8 @@ header .edge-content nav a:hover {
   word-wrap: break-word;
 }
 
+/*tech-stack*/
+
 .tech-stack .sub-container{
   gap: 8px;
 }
@@ -443,23 +516,4 @@ hr {
   border-top: 1px solid rgb(207, 174, 174);
 }
 
-/*Scroll to top button*/
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
 
-/*tech-stack*/

@@ -1,10 +1,29 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.pageYOffset);
+        };
+        
+        handleScroll(); // Check initial scroll position
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const isExpanded = scrollY === 0;
+
     return (
-        <div id="hero">
-            <motion.div 
-                className="hero-title"
+        <div id="hero" className={`section-background ${isExpanded ? 'expanded' : ''}`}>
+            <div className="section-container">
+                <motion.div 
+                    className="hero-title"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -34,6 +53,7 @@ const Hero = () => {
                 <p>Hi, I'm Leif <br /> <br /> I'm an apprentice software developing at Sunrise.</p>
             </motion.div>
         </div>
+    </div>
     );
 };
 

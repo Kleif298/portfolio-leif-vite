@@ -1,5 +1,4 @@
 import './App.css'
-import ScrollToTop from './components/ScrollToTop'
 import Header from './components/header'
 import Hero from './components/hero'
 import About from './components/about'
@@ -15,7 +14,6 @@ function App() {
       <About />
       <Mywork />
       <Footer />
-      <ScrollToTop />
     </>
   )
 }

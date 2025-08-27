@@ -1,11 +1,11 @@
-import sunriseLogo from "../assets/sunrise-logo-grey.png"
+import sunriseLogo from "../assets/sunrise-svg.svg"
 
 const Header = () => {
     return (
     <header>
         <div className="edge-mini-bar"></div>
         <div className="edge-content">
-            <img src={sunriseLogo} alt="sunrise-logo-grey"></img>
+            <img src={sunriseLogo} alt="sunrise-logo" className="header-logo"></img>
             <nav>
                 <a href="#">Home</a>
                 <a href="#about">About Me</a>
