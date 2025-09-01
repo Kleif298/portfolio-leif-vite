@@ -2,17 +2,15 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isOnTop, setIsOnTop] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            if (scrollPosition > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsOnTop(scrollPosition === 0);
         };
+
+        handleScroll();
 
         window.addEventListener('scroll', handleScroll);
         return () => {

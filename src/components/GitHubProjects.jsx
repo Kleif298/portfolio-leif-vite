@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ProjectCard from "./ProjectCard";
 
 const GitHubProjects = ({ username }) => {
   const [repos, setRepos] = useState([]);
@@ -9,17 +10,11 @@ const GitHubProjects = ({ username }) => {
       .then(data => setRepos(data))
       .catch(err => console.error(err));
   }, [username]);
-
+  {console.log(repos)}
   return (
     <div className="sub-container">
       {repos.map(repo => (
-        <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer">
-          <div className="project-card">
-            <h3 className="title">{repo.name}</h3>
-            <hr />
-            <p className="description">{repo.description}</p>
-          </div>
-        </a>
+        <ProjectCard key={repo.id} repo={repo} />
       ))}
     </div>
   );

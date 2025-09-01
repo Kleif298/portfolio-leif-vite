@@ -1,18 +1,20 @@
 import './App.css'
-import Header from './components/header'
-import Hero from './components/hero'
-import About from './components/about'
-import Mywork from './components/mywork'
-import Footer from './components/footer'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import About from './components/About'
+import MyWork from './components/MyWork'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
       <Header />
-      <Hero />
-      <About />
-      <Mywork />
+      <main>
+        <Hero />
+        <About />
+        <MyWork />
+      </main>
       <Footer />
     </>
   )
