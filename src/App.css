@@ -85,15 +85,13 @@ html, body {
 
 #about.section-background {
   background-color: var(--background-dark);
-  box-shadow: 0 -16px 24px rgb(51, 51, 51, 50%),
-              0 16px 24px rgb(51, 51, 51, 50%);
+  box-shadow: 0 -16px 24px rgba(51, 51, 51, 0.5),
+              0 16px 24px rgba(51, 51, 51, 0.5);
 }
 
 #mywork.section-background {
   background-color: var(--background-light);
-
 }
-
 
 #hero .section-container {
   display: flex;
@@ -267,20 +265,23 @@ header .edge-content nav a:hover {
 }
 
 #hero .text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
   height: 280px;
-  width: 220px;
-  border-radius: 15px;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.25);
+  max-width: 420px;
+  
   margin: auto 0;
   color: #333333;
   font-size: 1.2rem;
 }
 
 #hero .text-box p {
-  padding: 15px;
-
+  padding: 0;
   margin: 0;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 /*About related*/
@@ -319,22 +320,43 @@ header .edge-content nav a:hover {
 
 
 
-/* Override index.css link color for social icons */
-
-
 /*mywork related*/
 
 
 #mywork .main-container {
-  flex: 1;
   width: 100%;
-  height: auto;
-  min-height: 300px;
+  height: fit-content;
   border-radius: 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+#mywork .headOfContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
+#mywork button.showMore {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 4px rgba(218, 41, 28, 0.2);
+}
+
+#mywork button.showMore:hover {
+  background-color: var(--secondary-red);
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(218, 41, 28, 0.3);
+}
 
 #mywork h2 {
   padding: 20px 0 0 50px;
@@ -344,32 +366,47 @@ header .edge-content nav a:hover {
 
 
 /*Projects display (by GitHub API)*/
-.sub-container{
+.sub-container {
   display: flex;
   flex-flow: row wrap;
   padding: 40px;
-  gap: 15px;
+  gap: 20px;
+  width: 100%;
+  justify-content: flex-start;
 }
 
-.project-card{
+.sub-container:not(.show-all) {
+  overflow: hidden;
+  max-height: 230px; /* Höhe für exakt eine Zeile (170px Card + 60px padding) */
+}
+
+.project-card {
   background-color: var(--background-white);
   height: 170px;
-  width: 200px;
+  min-width: 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  border: 2px solid rgba(218, 41, 28, 0.2);
+  border: 2px solid var(--primary-red);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-speed) ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0; /* Cards behalten ihre Größe */
 }
+
+/* Container-Mindestbreite für mindestens eine Card + Padding + Gaps */
+.projects-container.main-container {
+  min-width: calc(350px + 80px); /* Card-Breite + 2x Padding */
+}
+
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(218, 41, 28, 0.2);
-  border-color: var(--primary-color);
+  border-color: var(--secondary-red);
 }
 
 .project-card::before {
@@ -393,21 +430,28 @@ header .edge-content nav a:hover {
 }
 
 .project-card .title {
-  font-size: 1.5rem;
-  color: #333333;
-  margin: 5px 10px;
-  white-space: nowrap;
+  font-size: 1.4rem;
+  color: white;
+  padding: 12px 15px 8px 15px;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  background-color: var(--primary-red);
 }
 
 .project-card .description {
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #666666;
-  margin: 10px;
+  margin: 8px 15px 15px 15px;
   overflow: hidden;
-  display: block;
-  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  flex-grow: 1;
 }
 
 /*tech-stack*/
@@ -416,21 +460,35 @@ header .edge-content nav a:hover {
   gap: 8px;
 }
 
-.tech-item{
+.tech-item {
   color: #333333;
-  background-color:  #ffdfdf;
+  background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px;
+  padding: 8px 16px;
+  gap: 8px;
+  min-width: 100px;
+  transition: transform var(--transition-speed) ease;
+  border: 2px solid #f7f6f5;
+}
+
+.tech-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-red);
+}
+
+.tech-item span {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 
 hr {
   margin: 0;
   border: none;
-  border-top: 1px solid rgb(207, 174, 174);
+  border-top: 1px solid var(--secondary-red);
 }
 
 

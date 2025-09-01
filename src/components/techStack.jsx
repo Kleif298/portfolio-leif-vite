@@ -1,5 +1,3 @@
-// TechStack.jsx
-import React from "react";
 import { DiJava, DiJavascript1, DiHtml5, DiCss3, DiReact, DiMysql, DiGit, DiPython, DiTerminal } from "react-icons/di";
 import { SiVite, SiRaspberrypi } from "react-icons/si";
 

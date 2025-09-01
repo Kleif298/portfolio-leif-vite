@@ -49,7 +49,7 @@ const Hero = () => {
                 transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
             >
-                <p>Hi, I'm Leif <br /> <br /> I'm an apprentice software developing at Sunrise.</p>
+                <h2>Curious mind. </h2> <h2>Creative coder. </h2> <h2>Constant learner.</h2>
             </motion.div>
         </div>
     </div>
