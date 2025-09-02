@@ -1,4 +1,4 @@
-import sunriseLogo from "../assets/sunrise-svg.svg"
+import sunriseLogo from "../../assets/sunrise-svg.svg"
 
 const Header = () => {
     return (

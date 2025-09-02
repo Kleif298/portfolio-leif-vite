@@ -1,9 +1,9 @@
 import './App.css'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import MyWork from './components/MyWork'
-import Footer from './components/Footer'
+import Header from './components/common/Header'
+import Hero from './components/hero/Hero'
+import About from './components/about/About'
+import MyWork from './components/mywork/MyWork'
+import Footer from './components/common/Footer'
 
 function App() {
 

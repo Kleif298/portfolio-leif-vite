@@ -1,6 +1,4 @@
-/* =================================================================== */
-/* GENERAL */
-/* =================================================================== */
+/*General*/
 
 :root {
   --primary-red: #da291c;
@@ -24,7 +22,7 @@ html, body {
   padding: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  position: static;
+  position: static; /* Change from absolute to static */
 }
 
 #root {
@@ -33,7 +31,7 @@ html, body {
   margin: 0 auto;
   padding-top: 0;
   align-content: center;
-  position: relative;
+  position: relative; /* Add if needed for stacking context */
 }
 
 @keyframes fadeIn {
@@ -44,15 +42,6 @@ html, body {
 @keyframes slideIn {
   from { transform: translateX(-100%); }
   to { transform: translateX(0); }
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 17ch }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
 }
 
 .animate-fade-in {
@@ -67,6 +56,7 @@ html, body {
   transform: scale(1.05);
 }
 
+/* Default Section layout */
 .section-background {
   width: 100%;
   min-height: 400px;
@@ -87,33 +77,51 @@ html, body {
   scroll-margin-top: 80px;
 }
 
-.social-links {
-  margin-left: 20px;
+/* Specific section settings */
+
+#hero.section-background {
+  background-color: var(--background-light);
+}
+
+#about.section-background {
+  background-color: var(--background-dark);
+  box-shadow: 0 -16px 24px rgba(51, 51, 51, 0.5),
+              0 16px 24px rgba(51, 51, 51, 0.5);
+}
+
+#mywork.section-background {
+  background-color: var(--background-light);
+}
+
+#hero .section-container {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+  padding-top: 90px;
 }
 
-.social-links a {
+#about .section-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
   color: white;
-  transition: transform 0.3s ease;
+  align-items: center;
 }
 
-.social-links a:hover {
-  transform: translateY(-3px);
-  color: white;
+#mywork .section-container {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-hr {
-  margin: 0;
-  border: none;
-  border-top: 1px solid var(--secondary-red);
-}
-
-/* =================================================================== */
-/* HEADER & FOOTER */
-/* =================================================================== */
+/*Header and Footer related*/
 
 header, footer {
+
   display: flex;
   flex-direction: column;
   left: 0;
@@ -132,7 +140,7 @@ header {
 
 footer {
   bottom: 0;
-  height: 120px;
+  height: 120px;;
   box-shadow: 0 -10px 20px var(--secondary-red);
 }
 
@@ -142,7 +150,7 @@ footer {
   background-color: var(--secondary-red);
 }
 
-footer .edge-mini-bar {
+footer .edge-mini-bar{
   height: 25px;
   display: flex;
   align-items: center;
@@ -157,21 +165,23 @@ header .edge-content, footer .edge-content {
   background-color: var(--primary-red);
 }
 
-footer .edge-content {
+footer .edge-content{
   justify-content: center;
 }
 
-footer p {
+
+footer p{
   margin: 0;
   padding: 0 20px;
   color: white;
 }
 
-header .edge-content img {
+header .edge-content img{
   height: 40px;
   width: auto;
   margin: 0 80px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* This makes the SVG white */
+  filter: drop-shadow(0 0 10px 4px white);
 }
 
 header .edge-content nav {
@@ -211,21 +221,25 @@ header .edge-content nav a:hover {
   color: var(--background-light);
 }
 
-/* =================================================================== */
-/* HERO */
-/* =================================================================== */
+/*Social Links*/
 
-#hero.section-background {
-  background-color: var(--background-light);
-}
-
-#hero .section-container {
+.social-links {
+  margin-left: 20px;
   display: flex;
-  flex-direction: row;
-  height: 100vh;
-  align-items: center;
-  padding-top: 90px;
+  gap: 1.5rem;
 }
+
+.social-links a {
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  color: white;
+}
+
+/*Hero related*/
 
 #hero .hero-title {
   display: flex;
@@ -259,6 +273,7 @@ header .edge-content nav a:hover {
   padding: 15px;
   height: 280px;
   max-width: 420px;
+  
   margin: auto 0;
   color: #333333;
   font-size: 1.2rem;
@@ -269,6 +284,7 @@ header .edge-content nav a:hover {
   padding: 0;
   margin: 0;
   text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.5);
+
   white-space: nowrap;
   overflow: hidden;
   border-right: .15em solid currentColor;
@@ -277,23 +293,17 @@ header .edge-content nav a:hover {
     blink .75s step-end infinite;
 }
 
-/* =================================================================== */
-/* ABOUT */
-/* =================================================================== */
-
-#about.section-background {
-  background-color: var(--background-dark);
-  box-shadow: 0 -16px 24px rgba(51, 51, 51, 0.5),
-              0 16px 24px rgba(51, 51, 51, 0.5);
+@keyframes typing {
+  from { width: 0 }
+  to { width: 17ch } /* rem = root em */
 }
 
-#about .section-container {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 2rem;
-  color: white;
-  align-items: center;
+@keyframes blink {
+  50% { border-color: transparent }
 }
+
+/*About related*/
+
 
 #about .image-box {
   width: 300px;
@@ -307,18 +317,6 @@ header .edge-content nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-@media (max-width: 799px) {
-  #about .image-box {
-    display: none;
-  }
-  #about .section-container {
-  display: flex;
-
-  gap: 2rem;
-  color: white;
-  align-items: center;
-}
 }
 
 #about .content-wrapper {
@@ -338,22 +336,10 @@ header .edge-content nav a:hover {
   line-height: 1.6;
 }
 
-/* =================================================================== */
-/* MY WORK */
-/* =================================================================== */
 
-#mywork.section-background {
-  background-color: var(--background-light);
-}
 
-#mywork .section-container {
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: flex-start;
-}
+/*mywork related*/
+
 
 #mywork .main-container {
   width: 100%;
@@ -364,7 +350,6 @@ header .edge-content nav a:hover {
   margin-bottom: 2rem;
   overflow: hidden;
 }
-
 #mywork .headOfContainer {
   display: flex;
   justify-content: space-between;
@@ -397,23 +382,21 @@ header .edge-content nav a:hover {
   color: #333333;
 }
 
+
+/*Projects display (by GitHub API)*/
 .sub-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  display: flex;
+  flex-flow: row wrap;
   padding: 40px;
   gap: 20px;
   width: 100%;
+  justify-content: flex-start;
 }
 
 .sub-container:not(.show-all) {
   overflow: hidden;
-  max-height: 230px;
+  max-height: 230px; /* Höhe für exakt eine Zeile (170px Card + 60px padding) */
 }
-
-.projects-container .sub-container{
-  
-}
-
 
 .project-card {
   background-color: var(--background-white);
@@ -429,12 +412,14 @@ header .edge-content nav a:hover {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Cards behalten ihre Größe */
 }
 
+/* Container-Mindestbreite für mindestens eine Card + Padding + Gaps */
 .projects-container.main-container {
-
+  min-width: calc(350px + 80px); /* Card-Breite + 2x Padding */
 }
+
 
 .project-card:hover {
   transform: translateY(-5px);
@@ -487,11 +472,13 @@ header .edge-content nav a:hover {
   flex-grow: 1;
 }
 
-.tech-stack .sub-container {
+/*tech-stack*/
+
+.tech-stack .sub-container{
   gap: 8px;
 }
 
-.tech-card {
+.tech-item {
   color: #333333;
   background-color: #ffffff;
   border-radius: 10px;
@@ -505,12 +492,21 @@ header .edge-content nav a:hover {
   border: 2px solid #f7f6f5;
 }
 
-.tech-card:hover {
+.tech-item:hover {
   transform: translateY(-2px);
   border-color: var(--primary-red);
 }
 
-.tech-card span {
+.tech-item span {
   font-size: 1rem;
   font-weight: 500;
 }
+
+
+hr {
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--secondary-red);
+}
+
+

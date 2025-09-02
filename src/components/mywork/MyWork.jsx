@@ -1,5 +1,5 @@
 import ProjectsContainer from "./ProjectsContainer";
-import TechStack from "./TechStack";
+import TechContainer from "./TechContainer";
 
 const MyWork = () => {
     return(
@@ -10,7 +10,7 @@ const MyWork = () => {
                 
                 <div className="tech-stack main-container">
                     <h2>Tech Stack</h2>
-                    <TechStack />
+                    <TechContainer />
                 </div>
             </div>
         </div>

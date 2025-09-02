@@ -398,11 +398,12 @@ header .edge-content nav a:hover {
 }
 
 .sub-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  display: flex;
+  flex-flow: row wrap;
   padding: 40px;
   gap: 20px;
   width: 100%;
+  justify-content: flex-start;
 }
 
 .sub-container:not(.show-all) {
@@ -491,7 +492,7 @@ header .edge-content nav a:hover {
   gap: 8px;
 }
 
-.tech-card {
+.tech-item {
   color: #333333;
   background-color: #ffffff;
   border-radius: 10px;
@@ -505,12 +506,12 @@ header .edge-content nav a:hover {
   border: 2px solid #f7f6f5;
 }
 
-.tech-card:hover {
+.tech-item:hover {
   transform: translateY(-2px);
   border-color: var(--primary-red);
 }
 
-.tech-card span {
+.tech-item span {
   font-size: 1rem;
   font-weight: 500;
 }
