@@ -1,0 +1,178 @@
+/* MyWork Section - Modern Professional Design */
+.mywork {
+  background: linear-gradient(
+    135deg,
+    var(--neutral-50) 0%,
+    white 25%,
+    var(--neutral-50) 50%,
+    white 75%,
+    var(--neutral-50) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.mywork::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, var(--primary-red)10 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--accent-orange)10 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, var(--primary-red)05 0%, transparent 30%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.mywork__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-4);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mywork__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.mywork__title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    135deg,
+    var(--neutral-900) 0%,
+    var(--primary-red) 50%,
+    var(--accent-orange) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.mywork__subtitle {
+  font-size: var(--text-xl);
+  color: var(--neutral-600);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.mywork__main-container {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--neutral-200);
+  padding: var(--space-8) var(--space-6);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.mywork__main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+}
+
+.mywork__section {
+  margin-bottom: var(--space-12);
+  position: relative;
+}
+
+.mywork__section:last-child {
+  margin-bottom: 0;
+}
+
+.mywork__section-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.mywork__section-title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.mywork__section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  border-radius: 2px;
+}
+
+.mywork__section-description {
+  font-size: var(--text-lg);
+  color: var(--neutral-600);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mywork__title {
+    font-size: var(--text-4xl);
+  }
+  
+  .mywork__subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .mywork__main-container {
+    padding: var(--space-6) var(--space-4);
+    margin: 0 var(--space-2);
+  }
+  
+  .mywork__section-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .mywork__container {
+    padding: var(--space-12) var(--space-2);
+  }
+  
+  .mywork__main-container {
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+  }
+  
+  .mywork__title {
+    font-size: var(--text-3xl);
+  }
+}

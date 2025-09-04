@@ -12,7 +12,7 @@ const techStack = [
   { name: "HTML", icon: <DiHtml5 size={32} color="#e34c26" /> },
   { name: "CSS", icon: <DiCss3 size={32} color="#264de4" /> },
   { name: "React", icon: <DiReact size={32} color="#61DBFB" /> },
-  { name: "Vite", icon: <SiVite size={32} color="#646cff" /> },
+  { name: "Vite", icon: <SiVite size={32}  color="#646cff" /> },
   { name: "MySQL", icon: <DiMysql size={32} color="#4479A1" /> },
   { name: "Git", icon: <DiGit size={32} color="#f1502f" /> },
   { name: "Bash", icon: <DiTerminal size={32} color="#4EAA25" /> },  // Platzhalter
@@ -34,8 +34,8 @@ const MyWork = () => {
     };
 
     return(
-    <section id="mywork" className="background">
-        <div className="section-container">
+    <section id="mywork" className="mywork background">
+        <div className="mywork__container section-container">
 
             <CareerOverview />
 

@@ -2,15 +2,15 @@ import sunriseLogo from "../../assets/sunrise-svg.svg"
 
 const Header = () => {
     return (
-    <header>
-        <div className="edge-mini-bar"></div>
-        <div className="edge-content">
-            <img src={sunriseLogo} alt="sunrise-logo" className="header-logo"></img>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#mywork">My Work</a>
-                <a href="#contact">Contact</a>
+    <header className="header">
+        <div className="header__mini-bar"></div>
+        <div className="header__content">
+            <img src={sunriseLogo} alt="sunrise-logo" className="header__logo"></img>
+            <nav className="header__nav">
+                <a href="#" className="header__nav-link">Home</a>
+                <a href="#about" className="header__nav-link">About Me</a>
+                <a href="#mywork" className="header__nav-link">My Work</a>
+                <a href="#contact" className="header__nav-link">Contact</a>
             </nav>
         </div>
     </header>)

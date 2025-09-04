@@ -1,0 +1,187 @@
+/* Tech Container Component - Modern Professional Design */
+.techs-container {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.techs-container__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  padding: 0 var(--space-4);
+}
+
+.techs-container__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--neutral-900);
+  letter-spacing: -0.025em;
+}
+
+.techs-container__subtitle {
+  font-size: var(--text-base);
+  color: var(--neutral-600);
+  margin-top: var(--space-1);
+}
+
+.techs-container__controls {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.techs-container__wrapper {
+  position: relative;
+  overflow: hidden;
+  mask: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--space-6),
+    black calc(100% - var(--space-6)),
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--space-6),
+    black calc(100% - var(--space-6)),
+    transparent 100%
+  );
+}
+
+.techs-container__list {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: var(--space-4) var(--space-6);
+  align-items: center;
+  min-height: 60px;
+}
+
+.techs-container__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fade overlays for horizontal scroll indication */
+.techs-container__fade-left,
+.techs-container__fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--space-6);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity var(--transition-speed) var(--transition-curve);
+}
+
+.techs-container__fade-left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.techs-container__fade-right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.techs-container__fade-left--hidden,
+.techs-container__fade-right--hidden {
+  opacity: 0;
+}
+
+/* Grid layout for larger screens */
+@media (min-width: 768px) {
+  .techs-container__wrapper {
+    mask: none;
+    -webkit-mask: none;
+  }
+  
+  .techs-container__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-3);
+    overflow: visible;
+    padding: 0;
+    justify-items: center;
+  }
+  
+  .techs-container__fade-left,
+  .techs-container__fade-right {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .techs-container__list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-4);
+  }
+}
+
+/* Category sections */
+.techs-container__category {
+  margin-bottom: var(--space-8);
+}
+
+.techs-container__category-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-4);
+}
+
+.techs-container__category-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  border-radius: 2px;
+}
+
+/* Interactive states */
+.techs-container--interactive .tech-card {
+  cursor: pointer;
+}
+
+.techs-container--readonly .tech-card {
+  cursor: default;
+}
+
+/* Loading state */
+.techs-container--loading .tech-card {
+  opacity: 0.5;
+  pointer-events: none;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Empty state */
+.techs-container__empty {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  color: var(--neutral-500);
+  font-style: italic;
+}
+
+.techs-container__empty-icon {
+  font-size: 3rem;
+  color: var(--neutral-300);
+  margin-bottom: var(--space-4);
+}

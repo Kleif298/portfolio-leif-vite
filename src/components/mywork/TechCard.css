@@ -1,0 +1,169 @@
+/* Tech Card Component - Modern Professional Design */
+.tech-card {
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-700);
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-curve);
+  position: relative;
+  overflow: hidden;
+  min-width: auto;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--transition-curve);
+  z-index: 0;
+}
+
+.tech-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card:hover .tech-card__text,
+.tech-card:hover .tech-card__icon {
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+.tech-card--selected {
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  border-color: transparent;
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.tech-card--selected .tech-card__text,
+.tech-card--selected .tech-card__icon {
+  color: white;
+}
+
+.tech-card--selected::before {
+  opacity: 0;
+}
+
+.tech-card--selected:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+.tech-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) var(--transition-curve);
+  z-index: 1;
+  position: relative;
+}
+
+.tech-card__text {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all var(--transition-speed) var(--transition-curve);
+  z-index: 1;
+  position: relative;
+}
+
+/* Tech card sizes */
+.tech-card--small {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.8rem;
+}
+
+.tech-card--large {
+  padding: var(--space-4) var(--space-6);
+  font-size: 1rem;
+}
+
+/* Tech card variants */
+.tech-card--outline {
+  background: transparent;
+  border: 2px solid var(--neutral-300);
+}
+
+.tech-card--outline:hover {
+  border-color: var(--primary-red);
+  background: var(--primary-red);
+  color: white;
+}
+
+.tech-card--ghost {
+  background: transparent;
+  border: none;
+  color: var(--neutral-600);
+}
+
+.tech-card--ghost:hover {
+  background: var(--neutral-100);
+  color: var(--neutral-900);
+}
+
+/* Icon-only variant */
+.tech-card--icon-only {
+  padding: var(--space-3);
+  min-width: auto;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.tech-card--icon-only .tech-card__text {
+  display: none;
+}
+
+/* Skill level indicators */
+.tech-card--beginner::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 2px;
+  background: #fbbf24;
+  border-radius: 1px;
+}
+
+.tech-card--intermediate::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 2px;
+  background: #f59e0b;
+  border-radius: 1px;
+}
+
+.tech-card--advanced::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: #10b981;
+  border-radius: 1px;
+}

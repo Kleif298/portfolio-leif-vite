@@ -2,7 +2,7 @@ import TechCard from "./TechCard";
 
 const TechContainer = ({ techStack, selectedTechs, onSelect }) => {
   return (
-    <div className="techs-container main-container">
+    <div className="mywork__main-container">
       <div className="techs-container__header">
         <h2>Tech-Stack</h2>
       </div>

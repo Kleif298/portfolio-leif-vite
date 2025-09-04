@@ -25,25 +25,25 @@ const ProjectsContainer = ({ username, selectedTechs, onSelect }) => {
 
 
   return (
-    <div className="projects-container main-container">
+    <div className="mywork__main-container">
       <div className="projects-container__header">
         <h2>Projects</h2>
 
-        <div className="projects-container__header__selected-tech-wrapper">
-          <div className="projects-container__header__selected-tech">
+        <div className="projects-container__selected-tech-wrapper">
+          <div className="projects-container__selected-tech-list">
             {selectedTechs && selectedTechs.length > 0 ? (
               selectedTechs.map((tech) => (
                 <TechCard key={tech.name} tech={tech} onSelect={onSelect} isSelected={true} onlyIcon={true} />
               ))
             ) : (
-              <span className="select-tech-placeholder">Select a Tech</span>
+              <span className="projects-container__placeholder">Select a Tech</span>
             )}
           </div>
-          <div className="projects-container__header__selected-tech__fade-right" />
+          <div className="projects-container__fade-overlay" />
         </div>
 
         <button 
-          className="showMore" 
+          className="projects-container__show-more-btn" 
           onClick={handleToggleProjects}
           aria-label={showAllProjects ? "Weniger Projekte anzeigen" : "Alle Projekte anzeigen"}
         >
@@ -51,7 +51,7 @@ const ProjectsContainer = ({ username, selectedTechs, onSelect }) => {
         </button>
       </div>
 
-      <div className={`projects-container__list ${showAllProjects ? 'show-all' : ''}`}>
+      <div className={`projects-container__list ${showAllProjects ? 'projects-container__list--show-all' : ''}`}>
         {repos.map(repo => (
           <ProjectCard key={repo.id} repo={repo} />
         ))}
