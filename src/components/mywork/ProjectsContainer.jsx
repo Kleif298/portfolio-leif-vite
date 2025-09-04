@@ -23,8 +23,8 @@ const ProjectsContainer = ({ username }) => {
   };
 
   return (
-    <div className="projects-container main-container">
-      <div className="headOfContainer">
+    <div className="projects-container">
+      <div className="projects-container__header">
         <h2>Projects</h2>
         <button 
           className="showMore" 
@@ -35,7 +35,7 @@ const ProjectsContainer = ({ username }) => {
         </button>
       </div>
 
-      <div className={`sub-container ${showAllProjects ? 'show-all' : ''}`}>
+      <div className={`projects-container__list ${showAllProjects ? 'show-all' : ''}`}>
         {repos.map(repo => (
           <ProjectCard key={repo.id} repo={repo} />
         ))}

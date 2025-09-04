@@ -18,17 +18,17 @@
 }
 
 html, body {
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: static;
+  /* Temporarily disable scroll snap to test basic functionality */
+  /* scroll-snap-type: y proximity; */
 }
 
 #root {
-  height: 100%;
   width: 100%;
   margin: 0 auto;
   padding-top: 0;
@@ -69,7 +69,7 @@ html, body {
 
 .section-background {
   width: 100%;
-  min-height: 400px;
+
   display: flex;
   justify-content: center;
   background-color: var(--background-light);
@@ -217,6 +217,9 @@ header .edge-content nav a:hover {
 
 #hero.section-background {
   background-color: var(--background-light);
+  /* Temporarily disable scroll snap properties */
+  /* scroll-snap-align: start; */
+  /* scroll-snap-stop: always; */
 }
 
 #hero .section-container {
@@ -225,6 +228,13 @@ header .edge-content nav a:hover {
   height: 100vh;
   align-items: center;
   padding-top: 90px;
+  transition: padding 0.6s ease-out;
+  /* Improved transition for smoother effects */
+  will-change: padding;
+}
+
+#hero .section-container.viewing-page {
+  padding-top: calc(100vh - 90px);
 }
 
 #hero .hero-title {
@@ -257,9 +267,9 @@ header .edge-content nav a:hover {
   justify-content: space-around;
   align-items: center;
   padding: 15px;
-  height: 280px;
+
   max-width: 420px;
-  margin: auto 0;
+  margin: 0;
   color: #333333;
   font-size: 1.2rem;
 }
@@ -268,7 +278,7 @@ header .edge-content nav a:hover {
   font-family: 'Fira Code', monospace;
   padding: 0;
   margin: 0;
-  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
   overflow: hidden;
   border-right: .15em solid currentColor;
@@ -285,14 +295,27 @@ header .edge-content nav a:hover {
   background-color: var(--background-dark);
   box-shadow: 0 -16px 24px rgba(51, 51, 51, 0.5),
               0 16px 24px rgba(51, 51, 51, 0.5);
+  /* Temporarily disable scroll snap properties */
+  /* scroll-snap-align: start; */
+  /* scroll-margin-top: 80px; */
 }
 
 #about .section-container {
+  color: white;
+  align-items: center;
+}
+
+#about .about-top-wrapper {
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 2rem;
-  color: white;
-  align-items: center;
+  padding-bottom: 80px;
+}
+
+.test{
+  height: 200px;
+  width: 200px;
+  background-color: royalblue;
 }
 
 #about .image-box {
@@ -339,6 +362,28 @@ header .edge-content nav a:hover {
 }
 
 /* =================================================================== */
+/* EXTENDED INFO */
+/* =================================================================== */
+
+#extended-info.section-background {
+  background-color: orange;
+  box-shadow: 0 -16px 24px rgba(51, 51, 51, 0.5),
+              0 16px 24px rgba(51, 51, 51, 0.5);
+}
+
+#extended-info .section-container {
+  color: white;
+  align-items: center;
+}
+
+#extended-info .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 2rem;
+}
+
+/* =================================================================== */
 /* MY WORK */
 /* =================================================================== */
 
@@ -355,7 +400,7 @@ header .edge-content nav a:hover {
   align-items: flex-start;
 }
 
-#mywork .main-container {
+.projects-container, .techs-container {
   width: 100%;
   height: fit-content;
   border-radius: 20px;
@@ -365,14 +410,14 @@ header .edge-content nav a:hover {
   overflow: hidden;
 }
 
-#mywork .headOfContainer {
+.projects-container__header, .techs-container__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 40px;
 }
 
-#mywork button.showMore {
+.projects-container button.showMore {
   background-color: var(--primary-red);
   color: white;
   border: none;
@@ -385,41 +430,44 @@ header .edge-content nav a:hover {
   box-shadow: 0 2px 4px rgba(218, 41, 28, 0.2);
 }
 
-#mywork button.showMore:hover {
+.projects-container button.showMore:hover {
   background-color: var(--secondary-red);
   transform: scale(0.95);
   box-shadow: 0 4px 8px rgba(218, 41, 28, 0.3);
 }
 
 #mywork h2 {
-  padding: 20px 0 0 50px;
+  padding: 10px 30px;
   margin-bottom: 0;
   color: #333333;
 }
 
-.sub-container {
+.projects-container__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 10px 40px 40px 40px;
   gap: 20px;
   width: 100%;
 }
 
-.sub-container:not(.show-all) {
+.techs-container__list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px 40px 40px 40px;
+  gap: 20px;
+  width: 100%;
+}
+
+.projects-container__list:not(.show-all) {
   overflow: hidden;
-  max-height: 230px;
-}
+  max-height: 200px;
 
-.projects-container .sub-container{
-  
 }
-
 
 .project-card {
   background-color: var(--background-white);
   height: 170px;
-  min-width: 300px;
-  max-width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 2px solid var(--primary-red);
@@ -429,11 +477,6 @@ header .edge-content nav a:hover {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
-}
-
-.projects-container.main-container {
-
 }
 
 .project-card:hover {
@@ -462,7 +505,7 @@ header .edge-content nav a:hover {
   left: 100%;
 }
 
-.project-card .title {
+.project-card__title {
   font-size: 1.4rem;
   color: white;
   padding: 12px 15px 8px 15px;
@@ -473,7 +516,7 @@ header .edge-content nav a:hover {
   background-color: var(--primary-red);
 }
 
-.project-card .description {
+.project-card__description {
   font-style: italic;
   font-size: 0.95rem;
   color: #666666;
@@ -487,7 +530,7 @@ header .edge-content nav a:hover {
   flex-grow: 1;
 }
 
-.tech-stack .sub-container {
+.techs-container__list {
   gap: 8px;
 }
 
@@ -500,7 +543,7 @@ header .edge-content nav a:hover {
   align-items: center;
   padding: 8px 16px;
   gap: 8px;
-  min-width: 100px;
+  min-width: 60px;
   transition: transform var(--transition-speed) ease;
   border: 2px solid #f7f6f5;
 }

@@ -1,6 +1,7 @@
 import { DiJava, DiJavascript1, DiHtml5, DiCss3, DiReact, DiMysql, DiGit, DiPython, DiTerminal } from "react-icons/di";
 import { SiVite, SiRaspberrypi } from "react-icons/si";
 import TechCard from "./TechCard"
+import { div } from "framer-motion/client";
 
 const techStack = [
   { name: "Java", icon: <DiJava size={32} color="#f89820" /> },
@@ -18,10 +19,17 @@ const techStack = [
 
 const TechStack = () => {
   return (
-    <div className="sub-container">
-      {techStack.map((tech, index) => (
-        <TechCard key={index} tech={tech} />
-      ))}
+    <div className="techs-container">
+      <div className="techs-container__header">
+        <h2>Tech-Stack</h2>
+      </div>
+
+      <div className="techs-container__list">
+        {techStack.map((tech, index) => (
+          <TechCard key={index} tech={tech} />
+        ))}
+      </div>
+
     </div>
   );
 };

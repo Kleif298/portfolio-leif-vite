@@ -1,28 +1,10 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
-const Hero = () => {
-    const [isOnTop, setIsOnTop] = useState(true);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsOnTop(scrollPosition === 0);
-        };
-
-        handleScroll();
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    return (
-        <div id="hero" className="section-background">
-            <div className="section-container">
-                <motion.div 
-                    className="hero-title"
+const Hero = () => (
+    <section id="hero" className="section-background">
+        <div className="section-container viewing-hero">
+            <motion.div
+                className="hero-title"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -42,7 +24,7 @@ const Hero = () => {
                     Apprentice | Sunrise GmbH
                 </motion.p>
             </motion.div>
-            <motion.div 
+            <motion.div
                 className="text-box"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -52,8 +34,7 @@ const Hero = () => {
                 <h2>Curious mind. <br />Creative coder. <br />Constant learner.</h2>
             </motion.div>
         </div>
-    </div>
-    );
-};
+    </section>
+);
 
 export default Hero;
