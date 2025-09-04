@@ -2,6 +2,7 @@ import { DiJava, DiJavascript1, DiHtml5, DiCss3, DiReact, DiMysql, DiGit, DiPyth
 import { SiVite, SiRaspberrypi } from "react-icons/si";
 import ProjectsContainer from "./ProjectsContainer";
 import TechContainer from "./TechContainer";
+import CareerOverview from "./CareerOverview";
 import { useState } from "react";
 
 const techStack = [
@@ -35,6 +36,8 @@ const MyWork = () => {
     return(
     <section id="mywork" className="background">
         <div className="section-container">
+
+            <CareerOverview />
 
             <ProjectsContainer username={"Kleif298"} selectedTechs={selectedTechs} onSelect={handleSelect} />
 

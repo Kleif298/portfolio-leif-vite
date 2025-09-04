@@ -47,7 +47,7 @@ const About = () => {
             </div>
         </div>
         <button onClick={handleExtending} className="common-about__footer background">
-            Erweitern
+            Extend
         </button>
     </section>
     );

@@ -25,16 +25,18 @@ const ProjectsContainer = ({ username, selectedTechs, onSelect }) => {
 
 
   return (
-    <div className="projects-container">
+    <div className="projects-container main-container">
       <div className="projects-container__header">
         <h2>Projects</h2>
 
         <div className="projects-container__header__selected-tech-wrapper">
           <div className="projects-container__header__selected-tech">
-            {selectedTechs && selectedTechs.length > 0 && (
+            {selectedTechs && selectedTechs.length > 0 ? (
               selectedTechs.map((tech) => (
                 <TechCard key={tech.name} tech={tech} onSelect={onSelect} isSelected={true} onlyIcon={true} />
               ))
+            ) : (
+              <span className="select-tech-placeholder">Select a Tech</span>
             )}
           </div>
           <div className="projects-container__header__selected-tech__fade-right" />
