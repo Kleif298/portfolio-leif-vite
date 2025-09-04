@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const Hero = () => (
-    <section id="hero" className="section-background">
+    <section id="hero" className="background">
         <div className="section-container viewing-hero">
             <motion.div
                 className="hero-title"
@@ -21,7 +21,8 @@ const Hero = () => (
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                    Apprentice | Sunrise GmbH
+                    Apprentice | IT Application Developer <br />
+                    Sunrise GmbH
                 </motion.p>
             </motion.div>
             <motion.div

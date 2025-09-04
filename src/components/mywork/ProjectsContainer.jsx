@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import TechCard from "./TechCard";
 
-const ProjectsContainer = ({ username }) => {
+const ProjectsContainer = ({ username, selectedTechs, onSelect }) => {
   const [repos, setRepos] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
 
@@ -22,10 +23,23 @@ const ProjectsContainer = ({ username }) => {
     setShowAllProjects(!showAllProjects);
   };
 
+
   return (
     <div className="projects-container">
       <div className="projects-container__header">
         <h2>Projects</h2>
+
+        <div className="projects-container__header__selected-tech-wrapper">
+          <div className="projects-container__header__selected-tech">
+            {selectedTechs && selectedTechs.length > 0 && (
+              selectedTechs.map((tech) => (
+                <TechCard key={tech.name} tech={tech} onSelect={onSelect} isSelected={true} onlyIcon={true} />
+              ))
+            )}
+          </div>
+          <div className="projects-container__header__selected-tech__fade-right" />
+        </div>
+
         <button 
           className="showMore" 
           onClick={handleToggleProjects}
