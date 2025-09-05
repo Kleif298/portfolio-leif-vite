@@ -17,3 +17,4 @@ const TechContainer = ({ techStack, selectedTechs, onSelect }) => {
 };
 
 export default TechContainer;
+

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => (
     <section id="hero" className="hero background">
-        <div className="hero__container section-container viewing-hero">
+        <div className="hero__container container viewing-hero">
             <motion.div
                 className="hero__title-section"
                 initial={{ opacity: 0, x: -50 }}
@@ -41,3 +41,4 @@ const Hero = () => (
 );
 
 export default Hero;
+

@@ -35,7 +35,7 @@ const MyWork = () => {
 
     return(
     <section id="mywork" className="mywork background">
-        <div className="mywork__container section-container">
+        <div className="mywork__container container">
 
             <CareerOverview />
 

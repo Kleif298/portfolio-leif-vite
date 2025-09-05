@@ -17,7 +17,7 @@ const About = () => {
     return (
     <section id="about" className="about">
         <div className="about--background background">
-            <div className="section-container about__outer-wrapper">
+            <div className="container about__outer-wrapper">
                 <div className="about__image-box">
                     <img src={bildLeifAngle} alt="Leif" className="about__image" />
                 </div>
@@ -41,7 +41,7 @@ const About = () => {
 
 
         <div className={`about__extended background glass-effect ${extended ? 'about__extended--visible' : ''}`}>
-            <div className="section-container about__extended-wrapper">
+            <div className="container about__extended-wrapper">
                 <div className="about__cv-section glass-effect">
                     <h3 className="about__section-title">Career Timeline</h3>
                     <div className="about__cv-timeline">
@@ -92,3 +92,4 @@ const About = () => {
 };
 
 export default About;
+

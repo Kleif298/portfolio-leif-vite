@@ -20,9 +20,9 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 20% 20%, var(--primary-red)10 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, var(--accent-orange)10 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, var(--primary-red)05 0%, transparent 30%);
+    radial-gradient(circle at 20% 20%, var(--primary)10 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--accent)10 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, var(--primary)05 0%, transparent 30%);
   opacity: 0.4;
   pointer-events: none;
 }
@@ -56,8 +56,8 @@
   background: linear-gradient(
     135deg,
     var(--neutral-900) 0%,
-    var(--primary-red) 50%,
-    var(--accent-orange) 100%
+    var(--primary) 50%,
+    var(--accent) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -95,7 +95,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  background: linear-gradient(135deg, var(--primary), var(--accent));
 }
 
 .mywork__section {
@@ -130,7 +130,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   border-radius: 2px;
 }
 
@@ -176,3 +176,5 @@
     font-size: var(--text-3xl);
   }
 }
+
+

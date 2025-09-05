@@ -8,7 +8,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--neutral-200);
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
 }
 
 .header--scrolled {
@@ -30,7 +30,7 @@
   height: 2.5rem;
   width: auto;
   filter: none;
-  transition: transform var(--transition-speed) var(--transition-curve);
+  transition: transform var(--transition) var(--transition);
 }
 
 .header__logo:hover {
@@ -51,7 +51,7 @@
   font-size: 0.9rem;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
   letter-spacing: -0.01em;
 }
 
@@ -62,14 +62,14 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-red), var(--accent-orange));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 1px;
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
   transform: translateX(-50%);
 }
 
 .header__nav-link:hover {
-  color: var(--primary-red);
+  color: var(--primary);
   background-color: var(--neutral-100);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .header__nav-link--active {
-  color: var(--primary-red);
+  color: var(--primary);
   background-color: var(--neutral-100);
 }
 
@@ -94,7 +94,7 @@
   cursor: pointer;
   padding: var(--space-2);
   border-radius: var(--radius-md);
-  transition: background-color var(--transition-speed) var(--transition-curve);
+  transition: background-color var(--transition) var(--transition);
 }
 
 .header__mobile-menu:hover {
@@ -106,7 +106,7 @@
   height: 2px;
   background-color: var(--neutral-700);
   border-radius: 1px;
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
 }
 
 .header__mobile-menu--open .header__mobile-menu-line:nth-child(1) {
@@ -145,7 +145,7 @@
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-speed) var(--transition-curve);
+    transition: all var(--transition) var(--transition);
   }
   
   .header__nav--mobile.header__nav--open {
@@ -160,3 +160,5 @@
     padding: var(--space-3) var(--space-4);
   }
 }
+
+

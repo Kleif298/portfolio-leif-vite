@@ -3,6 +3,10 @@
   background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 100%);
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4.5rem; /* Account for fixed header height */
 }
 
 .hero::before {
@@ -23,8 +27,10 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: center;
-  min-height: 100vh;
-  padding-top: 6rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4);
   position: relative;
   z-index: 1;
 }
@@ -74,14 +80,14 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   border-radius: var(--radius-lg);
-  transition: all var(--transition-speed) var(--transition-curve);
-  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  box-shadow: var(--shadow);
 }
 
 .hero__cta-primary:hover {
@@ -99,15 +105,15 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-  border: 2px solid var(--primary-red);
+  border: 2px solid var(--primary);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition);
 }
 
 .hero__cta-secondary:hover {
   background: rgba(218, 19, 24, 0.05);
-  border-color: var(--accent-orange);
-  color: var(--primary-red);
+  border-color: var(--accent);
+  color: var(--primary);
 }
 
 .hero__visual-section {
@@ -154,12 +160,12 @@
 .hero__typing-text {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: var(--accent-orange-light);
+  color: var(--accent-light);
   line-height: 1.6;
   margin-top: 2rem;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid var(--accent-orange);
+  border-right: 2px solid var(--accent);
   animation: typing 3s steps(30, end) infinite,
              blink 1s step-end infinite;
 }
@@ -175,7 +181,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--primary-red);
+  background: var(--primary);
   border-radius: 50%;
   opacity: 0.6;
   animation: float 6s ease-in-out infinite;
@@ -207,11 +213,15 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 5rem; /* Slightly more padding on mobile */
+  }
+  
   .hero__container {
     grid-template-columns: 1fr;
     gap: var(--space-12);
     text-align: center;
-    padding-top: 8rem;
+    padding: var(--space-8) var(--space-4);
   }
   
   .hero__visual-section {
@@ -234,3 +244,5 @@
     justify-content: center;
   }
 }
+
+

@@ -17,7 +17,7 @@
   border-radius: var(--radius-lg);
   color: white;
   text-decoration: none;
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
@@ -30,9 +30,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   opacity: 0;
-  transition: opacity var(--transition-speed) var(--transition-curve);
+  transition: opacity var(--transition) var(--transition);
 }
 
 .social-links__link:hover {
@@ -48,7 +48,7 @@
 .social-links__link svg {
   position: relative;
   z-index: 1;
-  transition: all var(--transition-speed) var(--transition-curve);
+  transition: all var(--transition) var(--transition);
 }
 
 .social-links__link:hover svg {
@@ -90,7 +90,7 @@
 }
 
 .social-links__link--email:hover::before {
-  background: var(--primary-red);
+  background: var(--primary);
 }
 
 /* Mobile responsive */
@@ -109,3 +109,5 @@
     height: 48px;
   }
 }
+
+
