@@ -12,6 +12,7 @@
 @import './components/mywork/MyWork.css';
 @import './components/mywork/ProjectCard.css';
 @import './components/mywork/TechCard.css';
+@import './components/mywork/ProjectModal.css';
 
 /* App Layout Styles */
 .app {
