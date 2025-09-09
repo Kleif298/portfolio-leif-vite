@@ -26,9 +26,9 @@
 }
 
 .footer__container {
-  max-width: 1400px;
+  max-width: min(95vw, 1600px);
   margin: 0 auto;
-  padding: var(--space-12) var(--space-4) var(--space-6);
+  padding: clamp(var(--space-8), 4vw, var(--space-16)) clamp(var(--space-4), 3vw, var(--space-12)) clamp(var(--space-4), 2vw, var(--space-8));
   position: relative;
   z-index: 1;
 }
@@ -43,7 +43,7 @@
 .footer__content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-12);
+  gap: clamp(var(--space-8), 4vw, var(--space-20));
   margin-bottom: var(--space-8);
 }
 

@@ -1,6 +1,6 @@
 import './ProjectCard.css';
 
-const ProjectCard = ({ repo }) => {
+const ProjectCard = ({ repo, onOpenModal }) => {
   // Format the last updated date
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -14,8 +14,13 @@ const ProjectCard = ({ repo }) => {
   // Extract language or set default
   const primaryLanguage = repo.language || 'Code';
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    onOpenModal(repo);
+  };
+
   return (
-    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="project-card">
+    <div className="project-card" onClick={handleClick}>
       <div className="project-card__content">
         <h3 className="project-card__title">{repo.name}</h3>
         <hr />
@@ -39,8 +44,12 @@ const ProjectCard = ({ repo }) => {
             </div>
           )}
         </div>
+        
+        <div className="project-card__overlay">
+          <span className="project-card__overlay-text">Click to view details</span>
+        </div>
       </div>
-    </a>
+    </div>
   );
 }
 

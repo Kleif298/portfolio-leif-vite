@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import TechCard from "./TechCard";
+
 
 const ProjectsContainer = ({ username, selectedTechs, onSelect }) => {
   const [repos, setRepos] = useState([]);

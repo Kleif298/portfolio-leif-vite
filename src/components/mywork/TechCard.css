@@ -3,18 +3,18 @@
   background: white;
   border: 1px solid var(--neutral-200);
   border-radius: var(--radius-lg);
-  padding: var(--space-3) var(--space-4);
-  display: inline-flex;
+  padding: clamp(var(--space-2), 1vw, var(--space-6)) clamp(var(--space-3), 1.5vw, var(--space-8));
+  display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: 0.875rem;
+  gap: clamp(var(--space-1), 0.5vw, var(--space-4));
+  font-size: clamp(0.75rem, 1.2vw, 1.125rem);
   font-weight: 500;
   color: var(--neutral-700);
   cursor: pointer;
   transition: all var(--transition) var(--transition);
   position: relative;
   overflow: hidden;
-  min-width: auto;
+  min-width: fit-content;
 }
 
 .tech-card::before {

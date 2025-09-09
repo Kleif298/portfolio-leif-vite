@@ -46,19 +46,20 @@ const About = () => {
                     <h3 className="about__section-title">Career Timeline</h3>
                     <div className="about__cv-timeline">
                         <div className="about__cv-item">
-                            <div className="about__cv-date">2023 - Present</div>
+                            <div className="about__cv-date">2025 - Present</div>
                             <div className="about__cv-title">Software Developer Apprentice</div>
                             <div className="about__cv-company">Sunrise GmbH</div>
                             <div className="about__cv-description">Learning modern web technologies and contributing to innovative projects</div>
                         </div>
                         <div className="about__cv-item">
-                            <div className="about__cv-date">2022 - 2023</div>
-                            <div className="about__cv-title">Web Development Student</div>
-                            <div className="about__cv-company">Self-Taught</div>
-                            <div className="about__cv-description">Intensive study of React, JavaScript, and modern development practices</div>
+                            <div className="about__cv-date">2021 - 2025</div>
+                            <div className="about__cv-title">IT Student</div>
+                            <div className="about__cv-company">IMS Fraunenfeld</div>
+                            <div className="about__cv-description">Intensive study of React, C#, Python and modern development practices</div>
                         </div>
                     </div>
                 </div>
+                {/*
                 <div className="about__skills-section glass-effect">
                     <h3 className="about__section-title">Technical Skills</h3>
                     <div className="about__skills-grid">
@@ -82,6 +83,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                */}
             </div>
         </div>
         <button onClick={handleExtending} className="about__footer background hover-lift gradient-text">

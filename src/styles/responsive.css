@@ -1,0 +1,352 @@
+/* Advanced Responsive Utilities for Wide Screens */
+
+/* Container Queries Support (Modern Browsers) */
+@supports (container: inline-size) {
+  .responsive-container {
+    container: main / inline-size;
+  }
+  
+  @container main (min-width: 1280px) {
+    .responsive-text {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @container main (min-width: 1536px) {
+    .responsive-text {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+/* Fluid Grid System for Wide Screens */
+.fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.fluid-grid--dense {
+  grid-auto-flow: dense;
+}
+
+.fluid-grid--xl {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.fluid-grid--2xl {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+/* Wide Screen Specific Layouts */
+@media (min-width: 1920px) {
+  .ultrawide-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: var(--space-8);
+  }
+  
+  .ultrawide-content {
+    max-width: none;
+    padding: 0 var(--space-12);
+  }
+}
+
+/* Aspect Ratio Utilities */
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+.aspect-32-9 {
+  aspect-ratio: 32 / 9;
+}
+
+/* Advanced Typography Scaling */
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 0.5rem + 0.5vw, 1.125rem);
+}
+
+.text-fluid-base {
+  font-size: clamp(1rem, 0.75rem + 0.5vw, 1.25rem);
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.125rem, 0.875rem + 0.5vw, 1.5rem);
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.25rem, 1rem + 0.75vw, 2rem);
+}
+
+.text-fluid-2xl {
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
+}
+
+.text-fluid-3xl {
+  font-size: clamp(1.875rem, 1.5rem + 1.5vw, 3.5rem);
+}
+
+.text-fluid-4xl {
+  font-size: clamp(2.25rem, 1.75rem + 2vw, 4.5rem);
+}
+
+/* Spacing Utilities for Wide Screens */
+.space-fluid-sm {
+  padding: clamp(var(--space-4), 2vw, var(--space-8));
+}
+
+.space-fluid-md {
+  padding: clamp(var(--space-8), 3vw, var(--space-16));
+}
+
+.space-fluid-lg {
+  padding: clamp(var(--space-16), 5vw, var(--space-32));
+}
+
+/* Advanced Layout Components */
+.sidebar-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1280px) {
+  .sidebar-layout {
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-12);
+  }
+}
+
+@media (min-width: 1536px) {
+  .sidebar-layout {
+    grid-template-columns: 350px 1fr;
+    gap: var(--space-16);
+  }
+}
+
+@media (min-width: 1920px) {
+  .sidebar-layout {
+    grid-template-columns: 400px 1fr 300px;
+    gap: var(--space-20);
+  }
+}
+
+/* Magazine Style Layout for Wide Screens */
+.magazine-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-6);
+}
+
+.magazine-layout > *:nth-child(1) {
+  grid-column: span 8;
+}
+
+.magazine-layout > *:nth-child(2) {
+  grid-column: span 4;
+}
+
+.magazine-layout > *:nth-child(3) {
+  grid-column: span 6;
+}
+
+.magazine-layout > *:nth-child(4) {
+  grid-column: span 6;
+}
+
+@media (min-width: 1920px) {
+  .magazine-layout {
+    gap: var(--space-12);
+  }
+}
+
+/* Card Grid Layouts */
+.card-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+@media (min-width: 1280px) {
+  .card-grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1536px) {
+  .card-grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: var(--space-12);
+  }
+}
+
+@media (min-width: 1920px) {
+  .card-grid-auto {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-16);
+  }
+}
+
+/* Masonry Layout Support */
+.masonry-layout {
+  column-count: 2;
+  column-gap: var(--space-6);
+  column-fill: balance;
+}
+
+@media (min-width: 1024px) {
+  .masonry-layout {
+    column-count: 3;
+    column-gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1536px) {
+  .masonry-layout {
+    column-count: 4;
+    column-gap: var(--space-12);
+  }
+}
+
+@media (min-width: 1920px) {
+  .masonry-layout {
+    column-count: 5;
+    column-gap: var(--space-16);
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: var(--space-6);
+}
+
+/* Interactive Hover Effects for Wide Screens */
+@media (min-width: 1280px) {
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  
+  .hover-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+  }
+}
+
+/* Scroll Snap for Wide Screens */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+  gap: var(--space-6);
+}
+
+.scroll-snap-x > * {
+  scroll-snap-align: start;
+  flex: none;
+}
+
+@media (min-width: 1920px) {
+  .scroll-snap-x {
+    gap: var(--space-12);
+  }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+/* Visibility Utilities */
+.visible-xl {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .visible-xl {
+    display: block;
+  }
+}
+
+.visible-2xl {
+  display: none;
+}
+
+@media (min-width: 1536px) {
+  .visible-2xl {
+    display: block;
+  }
+}
+
+.visible-ultrawide {
+  display: none;
+}
+
+@media (min-width: 1920px) {
+  .visible-ultrawide {
+    display: block;
+  }
+}
+
+/* Hidden on large screens */
+.hidden-xl {
+  display: block;
+}
+
+@media (min-width: 1280px) {
+  .hidden-xl {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break-before {
+    break-before: page;
+  }
+  
+  .print-break-after {
+    break-after: page;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark Mode Utilities */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-invert {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
